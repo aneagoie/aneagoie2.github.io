@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .animated-bg {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold">YN</span>
+                <div class="space-x-8">
+                    <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                    <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex items-center justify-center animated-bg">
+        <div class="text-center px-4 animate__animated animate__fadeIn">
+            <h1 class="text-6xl font-bold mb-6 floating">Your Name</h1>
+            <p class="text-2xl mb-8 opacity-90">Full Stack Developer | Designer | Creator</p>
+            <a href="#projects" class="glass-effect px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300">
+                Explore My Work
+            </a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 px-4 bg-gray-800">
+        <div class="max-w-4xl mx-auto scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-12">About Me</h2>
+            <div class="glass-effect p-8 rounded-2xl">
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    Welcome to my portfolio! I'm passionate about creating beautiful and functional web applications.
+                    With expertise in modern web technologies, I focus on delivering high-quality solutions that solve real-world problems.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-32 px-4 bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Cards -->
+                <div class="project-card glass-effect rounded-xl overflow-hidden scroll-reveal">
+                    <img src="/api/placeholder/400/300" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project Name</h3>
+                        <p class="text-gray-400 mb-4">Brief description of the project and the technologies used.</p>
+                        <div class="flex gap-2">
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-effect rounded-xl overflow-hidden scroll-reveal">
+                    <img src="/api/placeholder/400/300" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project Name</h3>
+                        <p class="text-gray-400 mb-4">Brief description of the project and the technologies used.</p>
+                        <div class="flex gap-2">
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Vue.js</span>
+                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-sm">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-effect rounded-xl overflow-hidden scroll-reveal">
+                    <img src="/api/placeholder/400/300" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project Name</h3>
+                        <p class="text-gray-400 mb-4">Brief description of the project and the technologies used.</p>
+                        <div class="flex gap-2">
+                            <span class="px-3 py-1 bg-red-500/20 text-red-300 rounded-full text-sm">Angular</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 px-4 bg-gray-800">
+        <div class="max-w-4xl mx-auto text-center scroll-reveal">
+            <h2 class="text-4xl font-bold mb-12">Get In Touch</h2>
+            <div class="glass-effect p-8 rounded-2xl">
+                <p class="text-gray-300 mb-8">
+                    Interested in working together? Let's create something amazing!
+                </p>
+                <a href="mailto:your.email@example.com" class="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 text-gray-400 text-center">
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
